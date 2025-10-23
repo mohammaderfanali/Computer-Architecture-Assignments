@@ -1,0 +1,118 @@
+/******************************************************************************
+ ** Logisim-evolution goes FPGA automatic generated Verilog code             **
+ ** https://github.com/logisim-evolution/                                    **
+ **                                                                          **
+ ** Component : rotate                                                       **
+ **                                                                          **
+ *****************************************************************************/
+
+module rotate( a,
+               b,
+               res_low );
+
+   /*******************************************************************************
+   ** The inputs are defined here                                                **
+   *******************************************************************************/
+   input [31:0] a;
+   input [31:0] b;
+
+   /*******************************************************************************
+   ** The outputs are defined here                                               **
+   *******************************************************************************/
+   output [31:0] res_low;
+
+   /*******************************************************************************
+   ** The wires are defined here                                                 **
+   *******************************************************************************/
+   wire [31:0] s_logisimBus0;
+   wire [31:0] s_logisimBus1;
+   wire [31:0] s_logisimBus10;
+   wire [31:0] s_logisimBus11;
+   wire [31:0] s_logisimBus13;
+   wire [31:0] s_logisimBus14;
+   wire [31:0] s_logisimBus16;
+   wire [31:0] s_logisimBus4;
+   wire [31:0] s_logisimBus5;
+   wire [31:0] s_logisimBus6;
+   wire [31:0] s_logisimBus8;
+   wire [31:0] s_logisimBus9;
+   wire        s_logisimNet12;
+   wire        s_logisimNet15;
+   wire        s_logisimNet2;
+   wire        s_logisimNet3;
+   wire        s_logisimNet7;
+
+   /*******************************************************************************
+   ** The module functionality is described here                                 **
+   *******************************************************************************/
+
+   /*******************************************************************************
+   ** Here all input connections are defined                                     **
+   *******************************************************************************/
+   assign s_logisimBus16[31:0] = b;
+   assign s_logisimBus9[31:0]  = a;
+
+   /*******************************************************************************
+   ** Here all output connections are defined                                    **
+   *******************************************************************************/
+   assign res_low = s_logisimBus10[31:0];
+
+   /*******************************************************************************
+   ** Here all normal components are defined                                     **
+   *******************************************************************************/
+   Multiplexer_bus_2 #(.nrOfBits(32))
+      PLEXERS_1 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus11[31:0]),
+                 .muxIn_1(s_logisimBus8[31:0]),
+                 .muxOut(s_logisimBus13[31:0]),
+                 .sel(s_logisimBus16[1]));
+
+   Multiplexer_bus_2 #(.nrOfBits(32))
+      PLEXERS_2 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus13[31:0]),
+                 .muxIn_1(s_logisimBus1[31:0]),
+                 .muxOut(s_logisimBus5[31:0]),
+                 .sel(s_logisimBus16[2]));
+
+   Multiplexer_bus_2 #(.nrOfBits(32))
+      PLEXERS_3 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus5[31:0]),
+                 .muxIn_1(s_logisimBus0[31:0]),
+                 .muxOut(s_logisimBus6[31:0]),
+                 .sel(s_logisimBus16[3]));
+
+   Multiplexer_bus_2 #(.nrOfBits(32))
+      PLEXERS_4 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus6[31:0]),
+                 .muxIn_1(s_logisimBus4[31:0]),
+                 .muxOut(s_logisimBus10[31:0]),
+                 .sel(s_logisimBus16[4]));
+
+   Multiplexer_bus_2 #(.nrOfBits(32))
+      PLEXERS_5 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus9[31:0]),
+                 .muxIn_1(s_logisimBus14[31:0]),
+                 .muxOut(s_logisimBus11[31:0]),
+                 .sel(s_logisimBus16[0]));
+
+
+   /*******************************************************************************
+   ** Here all sub-circuits are defined                                          **
+   *******************************************************************************/
+
+   right_rotate_4   rotation_4 (.a(s_logisimBus13[31:0]),
+                                .a_rotate_4(s_logisimBus1[31:0]));
+
+   right_rotate_8   rotation_8 (.a(s_logisimBus5[31:0]),
+                                .a_rotate_8(s_logisimBus0[31:0]));
+
+   right_rotate_16   rotation_16 (.a(s_logisimBus6[31:0]),
+                                  .a_rotate_16(s_logisimBus4[31:0]));
+
+   right_rotate_1   rotation_1 (.a(s_logisimBus9[31:0]),
+                                .a_rotate_1(s_logisimBus14[31:0]));
+
+   right_rotate_2   rotation_2 (.a(s_logisimBus11[31:0]),
+                                .a_rotate_2(s_logisimBus8[31:0]));
+
+endmodule

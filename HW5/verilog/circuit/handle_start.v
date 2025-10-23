@@ -1,0 +1,217 @@
+/******************************************************************************
+ ** Logisim-evolution goes FPGA automatic generated Verilog code             **
+ ** https://github.com/logisim-evolution/                                    **
+ **                                                                          **
+ ** Component : handle_start                                                 **
+ **                                                                          **
+ *****************************************************************************/
+
+module handle_start( a,
+                     aluop,
+                     b,
+                     clk,
+                     rst,
+                     start );
+
+   /*******************************************************************************
+   ** The inputs are defined here                                                **
+   *******************************************************************************/
+   input [31:0] a;
+   input [3:0]  aluop;
+   input [31:0] b;
+   input        clk;
+   input        rst;
+
+   /*******************************************************************************
+   ** The outputs are defined here                                               **
+   *******************************************************************************/
+   output start;
+
+   /*******************************************************************************
+   ** The wires are defined here                                                 **
+   *******************************************************************************/
+   wire [31:0] s_logisimBus13;
+   wire [3:0]  s_logisimBus14;
+   wire [31:0] s_logisimBus19;
+   wire [3:0]  s_logisimBus20;
+   wire [3:0]  s_logisimBus23;
+   wire [31:0] s_logisimBus3;
+   wire [31:0] s_logisimBus7;
+   wire [3:0]  s_logisimBus8;
+   wire        s_logisimNet0;
+   wire        s_logisimNet1;
+   wire        s_logisimNet10;
+   wire        s_logisimNet11;
+   wire        s_logisimNet12;
+   wire        s_logisimNet15;
+   wire        s_logisimNet16;
+   wire        s_logisimNet17;
+   wire        s_logisimNet18;
+   wire        s_logisimNet2;
+   wire        s_logisimNet21;
+   wire        s_logisimNet22;
+   wire        s_logisimNet24;
+   wire        s_logisimNet25;
+   wire        s_logisimNet26;
+   wire        s_logisimNet4;
+   wire        s_logisimNet5;
+   wire        s_logisimNet6;
+   wire        s_logisimNet9;
+
+   /*******************************************************************************
+   ** The module functionality is described here                                 **
+   *******************************************************************************/
+
+   /*******************************************************************************
+   ** Here all input connections are defined                                     **
+   *******************************************************************************/
+   assign s_logisimBus13[31:0] = b;
+   assign s_logisimBus3[31:0]  = a;
+   assign s_logisimBus8[3:0]   = aluop;
+   assign s_logisimNet2        = clk;
+   assign s_logisimNet9        = rst;
+
+   /*******************************************************************************
+   ** Here all output connections are defined                                    **
+   *******************************************************************************/
+   assign start = s_logisimNet22;
+
+   /*******************************************************************************
+   ** Here all in-lined components are defined                                   **
+   *******************************************************************************/
+
+   // Constant
+   assign  s_logisimBus20[3:0]  =  4'h2;
+
+
+   // Constant
+   assign  s_logisimBus23[3:0]  =  4'h3;
+
+
+   // Constant
+   assign  s_logisimNet10  =  1'b1;
+
+
+   // Constant
+   assign  s_logisimNet26  =  1'b1;
+
+
+   // Constant
+   assign  s_logisimNet18  =  1'b1;
+
+
+   // NOT Gate
+   assign s_logisimNet0 = ~s_logisimNet4;
+
+   // NOT Gate
+   assign s_logisimNet16 = ~s_logisimNet21;
+
+   // NOT Gate
+   assign s_logisimNet1 = ~s_logisimNet25;
+
+   /*******************************************************************************
+   ** Here all normal components are defined                                     **
+   *******************************************************************************/
+   OR_GATE #(.BubblesMask(2'b00))
+      GATES_1 (.input1(s_logisimNet16),
+               .input2(s_logisimNet1),
+               .result(s_logisimNet5));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_2 (.input1(s_logisimNet5),
+               .input2(s_logisimNet6),
+               .result(s_logisimNet12));
+
+   AND_GATE #(.BubblesMask(2'b00))
+      GATES_3 (.input1(s_logisimNet6),
+               .input2(s_logisimNet0),
+               .result(s_logisimNet15));
+
+   OR_GATE #(.BubblesMask(2'b00))
+      GATES_4 (.input1(s_logisimNet12),
+               .input2(s_logisimNet15),
+               .result(s_logisimNet17));
+
+   OR_GATE #(.BubblesMask(2'b00))
+      GATES_5 (.input1(s_logisimNet24),
+               .input2(s_logisimNet11),
+               .result(s_logisimNet6));
+
+   Comparator #(.nrOfBits(4),
+                .twosComplement(1))
+      ARITH_6 (.aEqualsB(s_logisimNet24),
+               .aGreaterThanB(),
+               .aLessThanB(),
+               .dataA(s_logisimBus8[3:0]),
+               .dataB(s_logisimBus20[3:0]));
+
+   Comparator #(.nrOfBits(4),
+                .twosComplement(1))
+      ARITH_7 (.aEqualsB(s_logisimNet11),
+               .aGreaterThanB(),
+               .aLessThanB(),
+               .dataA(s_logisimBus8[3:0]),
+               .dataB(s_logisimBus23[3:0]));
+
+   Comparator #(.nrOfBits(4),
+                .twosComplement(1))
+      ARITH_8 (.aEqualsB(s_logisimNet4),
+               .aGreaterThanB(),
+               .aLessThanB(),
+               .dataA(s_logisimBus14[3:0]),
+               .dataB(s_logisimBus8[3:0]));
+
+   Comparator #(.nrOfBits(32),
+                .twosComplement(1))
+      ARITH_9 (.aEqualsB(s_logisimNet21),
+               .aGreaterThanB(),
+               .aLessThanB(),
+               .dataA(s_logisimBus19[31:0]),
+               .dataB(s_logisimBus3[31:0]));
+
+   Comparator #(.nrOfBits(32),
+                .twosComplement(1))
+      ARITH_10 (.aEqualsB(s_logisimNet25),
+                .aGreaterThanB(),
+                .aLessThanB(),
+                .dataA(s_logisimBus7[31:0]),
+                .dataB(s_logisimBus13[31:0]));
+
+   D_FLIPFLOP #(.invertClockEnable(0))
+      MEMORY_11 (.clock(s_logisimNet2),
+                 .d(s_logisimNet17),
+                 .preset(1'b0),
+                 .q(s_logisimNet22),
+                 .qBar(),
+                 .reset(s_logisimNet9),
+                 .tick(1'b1));
+
+   REGISTER_FLIP_FLOP #(.invertClock(0),
+                        .nrOfBits(32))
+      MEMORY_12 (.clock(s_logisimNet2),
+                 .clockEnable(s_logisimNet26),
+                 .d(s_logisimBus3[31:0]),
+                 .q(s_logisimBus19[31:0]),
+                 .reset(s_logisimNet9),
+                 .tick(1'b1));
+
+   REGISTER_FLIP_FLOP #(.invertClock(0),
+                        .nrOfBits(32))
+      MEMORY_13 (.clock(s_logisimNet2),
+                 .clockEnable(s_logisimNet10),
+                 .d(s_logisimBus13[31:0]),
+                 .q(s_logisimBus7[31:0]),
+                 .reset(s_logisimNet9),
+                 .tick(1'b1));
+
+   REGISTER_FLIP_FLOP #(.invertClock(0),
+                        .nrOfBits(4))
+      MEMORY_14 (.clock(s_logisimNet2),
+                 .clockEnable(s_logisimNet18),
+                 .d(s_logisimBus8[3:0]),
+                 .q(s_logisimBus14[3:0]),
+                 .reset(s_logisimNet9),
+                 .tick(1'b1));
+
+
+endmodule

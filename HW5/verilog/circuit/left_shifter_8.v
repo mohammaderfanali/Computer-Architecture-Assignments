@@ -1,0 +1,167 @@
+/******************************************************************************
+ ** Logisim-evolution goes FPGA automatic generated Verilog code             **
+ ** https://github.com/logisim-evolution/                                    **
+ **                                                                          **
+ ** Component : left_shifter_8                                               **
+ **                                                                          **
+ *****************************************************************************/
+
+module left_shifter_8( a,
+                       a_8_left_shift );
+
+   /*******************************************************************************
+   ** The inputs are defined here                                                **
+   *******************************************************************************/
+   input [63:0] a;
+
+   /*******************************************************************************
+   ** The outputs are defined here                                               **
+   *******************************************************************************/
+   output [63:0] a_8_left_shift;
+
+   /*******************************************************************************
+   ** The wires are defined here                                                 **
+   *******************************************************************************/
+   wire [55:0] s_logisimBus1;
+   wire [63:0] s_logisimBus2;
+   wire [63:0] s_logisimBus3;
+
+   /*******************************************************************************
+   ** The module functionality is described here                                 **
+   *******************************************************************************/
+
+   /*******************************************************************************
+   ** Here all wiring is defined                                                 **
+   *******************************************************************************/
+   assign s_logisimBus1[0]  = s_logisimBus2[0];
+   assign s_logisimBus1[10] = s_logisimBus2[10];
+   assign s_logisimBus1[11] = s_logisimBus2[11];
+   assign s_logisimBus1[12] = s_logisimBus2[12];
+   assign s_logisimBus1[13] = s_logisimBus2[13];
+   assign s_logisimBus1[14] = s_logisimBus2[14];
+   assign s_logisimBus1[15] = s_logisimBus2[15];
+   assign s_logisimBus1[16] = s_logisimBus2[16];
+   assign s_logisimBus1[17] = s_logisimBus2[17];
+   assign s_logisimBus1[18] = s_logisimBus2[18];
+   assign s_logisimBus1[19] = s_logisimBus2[19];
+   assign s_logisimBus1[1]  = s_logisimBus2[1];
+   assign s_logisimBus1[20] = s_logisimBus2[20];
+   assign s_logisimBus1[21] = s_logisimBus2[21];
+   assign s_logisimBus1[22] = s_logisimBus2[22];
+   assign s_logisimBus1[23] = s_logisimBus2[23];
+   assign s_logisimBus1[24] = s_logisimBus2[24];
+   assign s_logisimBus1[25] = s_logisimBus2[25];
+   assign s_logisimBus1[26] = s_logisimBus2[26];
+   assign s_logisimBus1[27] = s_logisimBus2[27];
+   assign s_logisimBus1[28] = s_logisimBus2[28];
+   assign s_logisimBus1[29] = s_logisimBus2[29];
+   assign s_logisimBus1[2]  = s_logisimBus2[2];
+   assign s_logisimBus1[30] = s_logisimBus2[30];
+   assign s_logisimBus1[31] = s_logisimBus2[31];
+   assign s_logisimBus1[32] = s_logisimBus2[32];
+   assign s_logisimBus1[33] = s_logisimBus2[33];
+   assign s_logisimBus1[34] = s_logisimBus2[34];
+   assign s_logisimBus1[35] = s_logisimBus2[35];
+   assign s_logisimBus1[36] = s_logisimBus2[36];
+   assign s_logisimBus1[37] = s_logisimBus2[37];
+   assign s_logisimBus1[38] = s_logisimBus2[38];
+   assign s_logisimBus1[39] = s_logisimBus2[39];
+   assign s_logisimBus1[3]  = s_logisimBus2[3];
+   assign s_logisimBus1[40] = s_logisimBus2[40];
+   assign s_logisimBus1[41] = s_logisimBus2[41];
+   assign s_logisimBus1[42] = s_logisimBus2[42];
+   assign s_logisimBus1[43] = s_logisimBus2[43];
+   assign s_logisimBus1[44] = s_logisimBus2[44];
+   assign s_logisimBus1[45] = s_logisimBus2[45];
+   assign s_logisimBus1[46] = s_logisimBus2[46];
+   assign s_logisimBus1[47] = s_logisimBus2[47];
+   assign s_logisimBus1[48] = s_logisimBus2[48];
+   assign s_logisimBus1[49] = s_logisimBus2[49];
+   assign s_logisimBus1[4]  = s_logisimBus2[4];
+   assign s_logisimBus1[50] = s_logisimBus2[50];
+   assign s_logisimBus1[51] = s_logisimBus2[51];
+   assign s_logisimBus1[52] = s_logisimBus2[52];
+   assign s_logisimBus1[53] = s_logisimBus2[53];
+   assign s_logisimBus1[54] = s_logisimBus2[54];
+   assign s_logisimBus1[55] = s_logisimBus2[55];
+   assign s_logisimBus1[5]  = s_logisimBus2[5];
+   assign s_logisimBus1[6]  = s_logisimBus2[6];
+   assign s_logisimBus1[7]  = s_logisimBus2[7];
+   assign s_logisimBus1[8]  = s_logisimBus2[8];
+   assign s_logisimBus1[9]  = s_logisimBus2[9];
+   assign s_logisimBus3[10] = s_logisimBus1[2];
+   assign s_logisimBus3[11] = s_logisimBus1[3];
+   assign s_logisimBus3[12] = s_logisimBus1[4];
+   assign s_logisimBus3[13] = s_logisimBus1[5];
+   assign s_logisimBus3[14] = s_logisimBus1[6];
+   assign s_logisimBus3[15] = s_logisimBus1[7];
+   assign s_logisimBus3[16] = s_logisimBus1[8];
+   assign s_logisimBus3[17] = s_logisimBus1[9];
+   assign s_logisimBus3[18] = s_logisimBus1[10];
+   assign s_logisimBus3[19] = s_logisimBus1[11];
+   assign s_logisimBus3[20] = s_logisimBus1[12];
+   assign s_logisimBus3[21] = s_logisimBus1[13];
+   assign s_logisimBus3[22] = s_logisimBus1[14];
+   assign s_logisimBus3[23] = s_logisimBus1[15];
+   assign s_logisimBus3[24] = s_logisimBus1[16];
+   assign s_logisimBus3[25] = s_logisimBus1[17];
+   assign s_logisimBus3[26] = s_logisimBus1[18];
+   assign s_logisimBus3[27] = s_logisimBus1[19];
+   assign s_logisimBus3[28] = s_logisimBus1[20];
+   assign s_logisimBus3[29] = s_logisimBus1[21];
+   assign s_logisimBus3[30] = s_logisimBus1[22];
+   assign s_logisimBus3[31] = s_logisimBus1[23];
+   assign s_logisimBus3[32] = s_logisimBus1[24];
+   assign s_logisimBus3[33] = s_logisimBus1[25];
+   assign s_logisimBus3[34] = s_logisimBus1[26];
+   assign s_logisimBus3[35] = s_logisimBus1[27];
+   assign s_logisimBus3[36] = s_logisimBus1[28];
+   assign s_logisimBus3[37] = s_logisimBus1[29];
+   assign s_logisimBus3[38] = s_logisimBus1[30];
+   assign s_logisimBus3[39] = s_logisimBus1[31];
+   assign s_logisimBus3[40] = s_logisimBus1[32];
+   assign s_logisimBus3[41] = s_logisimBus1[33];
+   assign s_logisimBus3[42] = s_logisimBus1[34];
+   assign s_logisimBus3[43] = s_logisimBus1[35];
+   assign s_logisimBus3[44] = s_logisimBus1[36];
+   assign s_logisimBus3[45] = s_logisimBus1[37];
+   assign s_logisimBus3[46] = s_logisimBus1[38];
+   assign s_logisimBus3[47] = s_logisimBus1[39];
+   assign s_logisimBus3[48] = s_logisimBus1[40];
+   assign s_logisimBus3[49] = s_logisimBus1[41];
+   assign s_logisimBus3[50] = s_logisimBus1[42];
+   assign s_logisimBus3[51] = s_logisimBus1[43];
+   assign s_logisimBus3[52] = s_logisimBus1[44];
+   assign s_logisimBus3[53] = s_logisimBus1[45];
+   assign s_logisimBus3[54] = s_logisimBus1[46];
+   assign s_logisimBus3[55] = s_logisimBus1[47];
+   assign s_logisimBus3[56] = s_logisimBus1[48];
+   assign s_logisimBus3[57] = s_logisimBus1[49];
+   assign s_logisimBus3[58] = s_logisimBus1[50];
+   assign s_logisimBus3[59] = s_logisimBus1[51];
+   assign s_logisimBus3[60] = s_logisimBus1[52];
+   assign s_logisimBus3[61] = s_logisimBus1[53];
+   assign s_logisimBus3[62] = s_logisimBus1[54];
+   assign s_logisimBus3[63] = s_logisimBus1[55];
+   assign s_logisimBus3[8]  = s_logisimBus1[0];
+   assign s_logisimBus3[9]  = s_logisimBus1[1];
+
+   /*******************************************************************************
+   ** Here all input connections are defined                                     **
+   *******************************************************************************/
+   assign s_logisimBus2[63:0] = a;
+
+   /*******************************************************************************
+   ** Here all output connections are defined                                    **
+   *******************************************************************************/
+   assign a_8_left_shift = s_logisimBus3[63:0];
+
+   /*******************************************************************************
+   ** Here all in-lined components are defined                                   **
+   *******************************************************************************/
+
+   // Constant
+   assign  s_logisimBus3[7:0]  =  8'h00;
+
+
+endmodule

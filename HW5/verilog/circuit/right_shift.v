@@ -1,0 +1,165 @@
+/******************************************************************************
+ ** Logisim-evolution goes FPGA automatic generated Verilog code             **
+ ** https://github.com/logisim-evolution/                                    **
+ **                                                                          **
+ ** Component : right_shift                                                  **
+ **                                                                          **
+ *****************************************************************************/
+
+module right_shift( a,
+                    aluop,
+                    b,
+                    res_high,
+                    res_low );
+
+   /*******************************************************************************
+   ** The inputs are defined here                                                **
+   *******************************************************************************/
+   input [31:0] a;
+   input [3:0]  aluop;
+   input [31:0] b;
+
+   /*******************************************************************************
+   ** The outputs are defined here                                               **
+   *******************************************************************************/
+   output [31:0] res_high;
+   output [31:0] res_low;
+
+   /*******************************************************************************
+   ** The wires are defined here                                                 **
+   *******************************************************************************/
+   wire [63:0] s_logisimBus10;
+   wire [63:0] s_logisimBus12;
+   wire [63:0] s_logisimBus13;
+   wire [63:0] s_logisimBus15;
+   wire [63:0] s_logisimBus16;
+   wire [63:0] s_logisimBus18;
+   wire [3:0]  s_logisimBus19;
+   wire [63:0] s_logisimBus2;
+   wire [31:0] s_logisimBus20;
+   wire [31:0] s_logisimBus23;
+   wire [3:0]  s_logisimBus24;
+   wire [63:0] s_logisimBus25;
+   wire [63:0] s_logisimBus6;
+   wire [63:0] s_logisimBus7;
+   wire [63:0] s_logisimBus8;
+   wire        s_logisimNet1;
+   wire        s_logisimNet11;
+   wire        s_logisimNet17;
+   wire        s_logisimNet21;
+   wire        s_logisimNet22;
+   wire        s_logisimNet3;
+   wire        s_logisimNet4;
+   wire        s_logisimNet5;
+   wire        s_logisimNet9;
+
+   /*******************************************************************************
+   ** The module functionality is described here                                 **
+   *******************************************************************************/
+
+   /*******************************************************************************
+   ** Here all input connections are defined                                     **
+   *******************************************************************************/
+   assign s_logisimBus19[3:0]  = aluop;
+   assign s_logisimBus20[31:0] = b;
+   assign s_logisimBus23[31:0] = a;
+
+   /*******************************************************************************
+   ** Here all output connections are defined                                    **
+   *******************************************************************************/
+   assign res_high = s_logisimBus7[63:32];
+   assign res_low  = s_logisimBus7[31:0];
+
+   /*******************************************************************************
+   ** Here all in-lined components are defined                                   **
+   *******************************************************************************/
+
+   // Constant
+   assign  s_logisimBus24[3:0]  =  4'hB;
+
+
+   // Constant
+   assign  s_logisimNet21  =  1'b1;
+
+
+   // Constant
+   assign  s_logisimNet22  =  1'b0;
+
+
+   /*******************************************************************************
+   ** Here all normal components are defined                                     **
+   *******************************************************************************/
+   Multiplexer_bus_2 #(.nrOfBits(64))
+      PLEXERS_1 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus6[63:0]),
+                 .muxIn_1(s_logisimBus15[63:0]),
+                 .muxOut(s_logisimBus12[63:0]),
+                 .sel(s_logisimBus20[1]));
+
+   Multiplexer_bus_2 #(.nrOfBits(64))
+      PLEXERS_2 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus12[63:0]),
+                 .muxIn_1(s_logisimBus13[63:0]),
+                 .muxOut(s_logisimBus8[63:0]),
+                 .sel(s_logisimBus20[2]));
+
+   Multiplexer_bus_2 #(.nrOfBits(64))
+      PLEXERS_3 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus8[63:0]),
+                 .muxIn_1(s_logisimBus25[63:0]),
+                 .muxOut(s_logisimBus10[63:0]),
+                 .sel(s_logisimBus20[3]));
+
+   Multiplexer_bus_2 #(.nrOfBits(64))
+      PLEXERS_4 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus10[63:0]),
+                 .muxIn_1(s_logisimBus2[63:0]),
+                 .muxOut(s_logisimBus7[63:0]),
+                 .sel(s_logisimBus20[4]));
+
+   Multiplexer_2   PLEXERS_5 (.enable(1'b1),
+                              .muxIn_0(s_logisimNet22),
+                              .muxIn_1(s_logisimNet21),
+                              .muxOut(s_logisimNet11),
+                              .sel(s_logisimNet4));
+
+   Multiplexer_bus_2 #(.nrOfBits(64))
+      PLEXERS_6 (.enable(1'b1),
+                 .muxIn_0(s_logisimBus16[63:0]),
+                 .muxIn_1(s_logisimBus18[63:0]),
+                 .muxOut(s_logisimBus6[63:0]),
+                 .sel(s_logisimBus20[0]));
+
+   Comparator #(.nrOfBits(4),
+                .twosComplement(1))
+      ARITH_7 (.aEqualsB(s_logisimNet4),
+               .aGreaterThanB(),
+               .aLessThanB(),
+               .dataA(s_logisimBus19[3:0]),
+               .dataB(s_logisimBus24[3:0]));
+
+
+   /*******************************************************************************
+   ** Here all sub-circuits are defined                                          **
+   *******************************************************************************/
+
+   right_shifter_2   right_shift_2 (.a(s_logisimBus6[63:0]),
+                                    .a_2_right_shift(s_logisimBus15[63:0]));
+
+   right_shifter_4   right_shift_4 (.a(s_logisimBus12[63:0]),
+                                    .a_4_right_shift(s_logisimBus13[63:0]));
+
+   right_shifter_8   right_shift_8 (.a(s_logisimBus8[63:0]),
+                                    .a_8_right_shift(s_logisimBus25[63:0]));
+
+   right_shifter_16   right_shift_16 (.a(s_logisimBus10[63:0]),
+                                      .a_16_right_shift(s_logisimBus2[63:0]));
+
+   sign_extended   shign_extend (.a(s_logisimBus23[31:0]),
+                                 .a_extend(s_logisimBus16[63:0]),
+                                 .sign(s_logisimNet11));
+
+   right_shifter_1   right_shift_1 (.a(s_logisimBus16[63:0]),
+                                    .a_1_right_shift(s_logisimBus18[63:0]));
+
+endmodule
